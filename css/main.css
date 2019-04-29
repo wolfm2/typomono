@@ -102,13 +102,19 @@
   font-family: Open Sans;
 }
 
-.grid-text #title #end-block, .sect-grid  #end-block {
+.grid-text #title #end-block, .sect-grid  #end-block  {
 	background-color: red;
 	margin-top: 3px;
 	margin-left: -1px;
 	width: 1.5rem;
 	height: .2rem;
 } 
+
+.sect-grid .grid-txt-container #end-block {
+    background-color: #333;
+    margin: 5px;
+    margin-left: 0px;
+}
 
 .grid-img {
 }
@@ -146,7 +152,7 @@
 }    
 .sect-grid .grid-txt {
     margin: 10px;
-    font-family: Libre Baskerville;
+    font-family: Merriweather;
 }
 
 p {
