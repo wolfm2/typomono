@@ -1,0 +1,150 @@
+#section0 {
+	text-align: left;
+}
+
+#content-container {
+	height: 100vh;
+}
+
+#top-title {
+    font-size: 10vh;
+    font-family: Open Sans;
+    font-weight: 600;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    padding-left: 10px;
+    background-color: #0003;
+    cursor: default;
+}
+
+.types {
+    float: right;
+    font-size: 1.4rem;
+    padding-right: 30px;
+    padding-top: 3.4vh;
+}
+
+.types:hover {
+    transform: translateX(-3px);
+}
+
+#top-container {
+	display: flex;
+	justify-items: center;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: center;
+}
+
+#sidebar {
+    padding-left: 10px;
+    width: 8vw;
+    align-self: flex-start;
+    margin-top: 4vh;
+}
+
+.connect {
+	width: 3.5vw;
+	display: block;
+	padding: 1vh 9vw 1vh 0vw;
+	opacity: .6;
+	transition: all 0.5s ease;
+}
+
+.connect:hover {
+	opacity: 1;
+}
+
+#main-grid {
+	display: grid;
+	grid-gap: 0px 0px;
+	grid-template-columns: repeat(4, 1fr);
+	width: 90vw;
+}
+
+.grid-item {
+	height: 30vh;
+	overflow: hidden;
+	transition: all 0.5s ease;
+}
+
+.grid-text {
+	background-color: #111;
+}
+
+.grid-text #number {
+	text-align: center;
+	color:red;
+	
+	font-family: Fira Sans;
+	font-weight: 900;
+	font-size: 3rem;
+	padding: 5px
+	font-weight: bolder;
+	text-align: right;
+	float: right;
+}
+
+.grid-text #title{
+  width: 125px;
+	color: white;
+	position: relative;
+	bottom: -24vh;
+	left: 5vh;
+	transform-origin: center left;
+	transform: rotate(-90deg);
+  font-family: Open Sans;
+}
+
+.grid-text #title #end-block, .sect-grid  #end-block {
+	background-color: red;
+	margin-top: 3px;
+	margin-left: -1px;
+	width: 1.5rem;
+	height: .2rem;
+} 
+
+.grid-img {
+}
+
+.sect-grid {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.sect-grid #title{
+    color: white;
+    width: 20vw;
+    text-align: left;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 900;
+    font-family: Open Sans;
+}
+
+.sect-grid #title #title-date {
+    font-size: 20px;
+}
+
+.sect-grid .grid-img img{
+	height: 95vh;
+}
+
+.sect-grid .grid-txt-container {
+		width: 34vw;
+		height: 95vh;
+		
+    margin: auto;
+    color: #222;
+    background-color: #fafafa;
+}    
+.sect-grid .grid-txt {
+    margin: 10px;
+    font-family: Libre Baskerville;
+}
+
+p {
+    font-size: .85rem;
+    text-align: left;
+}
+
