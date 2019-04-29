@@ -50,6 +50,7 @@
 
 .connect {
 	width: 3.5vw;
+  max-width: 1.5rem;
 	display: block;
 	padding: 1vh 9vw 1vh 0vw;
 	opacity: .6;
