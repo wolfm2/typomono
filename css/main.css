@@ -8,12 +8,13 @@
 
 #top-title {
     font-size: 10vh;
-    font-family: Open Sans;
+    height:15vh;
+    font-family: Montserrat;
     font-weight: 600;
     padding-bottom: 5vh;
     padding-top: 5vh;
     padding-left: 10px;
-    background-color: #0003;
+    background-color: #fafafa;
     cursor: default;
 }
 
@@ -64,14 +65,26 @@
 #main-grid {
 	display: grid;
 	grid-gap: 0px 0px;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(4, 1fr .5fr);
 	width: 90vw;
+	margin: 0vw 5vw 5vw 5vw;
+	height: 80vh; /* height of grid */
+}
+
+#main-grid .main-text-container {
+	height:100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .grid-item {
-	height: 30vh;
+	hheight: 26vh;
 	overflow: hidden;
 	transition: all 0.5s ease;
+}
+
+.grid-item.grid-text {
+	margin-right:  5px;
 }
 
 .grid-text {
@@ -79,27 +92,27 @@
 }
 
 .grid-text #number {
-	text-align: center;
+  align-self: flex-end;
 	color:#f22;
 	
-	font-family: Fira Sans;
+	font-family: Open Sans;
 	font-weight: 900;
 	font-size: 3rem;
 	padding: 5px
 	font-weight: bolder;
-	text-align: right;
-	float: right;
+	ttext-align: right;
+	ffloat: right;
 }
 
 .grid-text #title{
-  width: 125px;
+  width: 122.5px;
 	color: white;
-	position: relative;
-	bottom: -24vh;
-	left: 5vh;
-	transform-origin: center left;
+	pposition: relative;
+  bbottom: -65vh;
+  lleft: 5px;	
+	transform-origin: top left;
 	transform: rotate(-90deg);
-  font-family: Open Sans;
+  font-family: Oswald;
 }
 
 .grid-text #title #end-block, .sect-grid  #end-block  {
@@ -117,10 +130,15 @@
 }
 
 .grid-img {
+	
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
 }
 
 .sect-grid {
-    display: flex;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -131,7 +149,7 @@
     margin: 10px;
     font-size: 30px;
     font-weight: 900;
-    font-family: Open Sans;
+    font-family: Fira Sans;
 }
 
 .sect-grid #title #title-date {
@@ -139,16 +157,19 @@
 }
 
 .sect-grid .grid-img img{
-	height: 95vh;
+	height: 85vh;
+  max-width: 70vw;
 }
 
 .sect-grid .grid-txt-container {
-		width: 34vw;
-		height: 95vh;
+		wwidth: 34vw;
+		hheight: 95vh;
 		
-    margin: auto;
-    color: #222;
-    background-color: #fafafa;
+    margin-top: 10vh;
+    width: 80%;
+    color: white;
+    background-color: #222;
+    ddisplay: none;
 }    
 .sect-grid .grid-txt {
     margin: 10px;
