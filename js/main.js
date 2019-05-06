@@ -18,12 +18,52 @@ var content = [
 	{title:"Master & Margarita", date:"2019.02", img:"img/mm.png", secIdx:2, copy:"“The tongue can conceal the truth, but the eyes never! You're asked an unexpected question, you don't even flinch, it takes just a second to get yourself under control, you know just what you have to say to hide the truth, and you speak very convincingly, and nothing in your face twitches to give you away. But the truth, alas, has been disturbed by the question, and it rises up from the depths of your soul to flicker in your eyes and all is lost.”<br><br>Mikhail Bulgakov, Master &amp; Margarita"},
 	{title:"Heart of a Dog", date:"2019.02", img:"img/hod.png", secIdx:2, copy:"“Kindness. The only possible method when dealing with a living creature. You'll get nowhere with an animal if you use terror, no matter what its level of development may be. That I have maintained, do maintain and always will maintain. People who think you can use terror are quite wrong. No, no, terror is useless, whatever its colour – white, red or even brown! Terror completely paralyses the nervous system.”<br><br>Mikhail Bulgakov, Heart of a Dog"},
 	{title:"White Guard", date:"2019.02", img:"img/wg.png", secIdx:2, copy:"“Everything passes away - suffering, pain, blood, hunger, pestilence. The sword will pass away too, but the stars will remain when the shadows of our presence and our deeds have vanished from the Earth. There is no man who does not know that. Why, then, will we not turn our eyes toward the stars? Why?”<br><br>Mikhail Bulgakov, The White Guard"},
-	// 
+	// random
 	{title:"The Inners", date:"2019.03", img:"img/inners.png", secIdx:3, copy:"“I do not know what I seem to the world, but to myself I appear to have been like a boy playing upon the seashore and diverting myself by now and then finding a smoother pebble or prettier shell than ordinary, while the great ocean of truth lay before me all undiscovered.”<br><br>Sir Isaac Newton"},
 	{title:"The Outers", date:"2019.03", img:"img/outers.png", secIdx:3, copy:"“Mankind will not remain on Earth forever, but in its quest for light and space will at first timidly penetrate beyond the confines of the atmosphere, and later will conquer for itself all the space near the Sun.”<br><br>Konstantin E. Tsiolkovsky, father of cosmonautics."}
 ];
 
+var menu = [
+	{label:"Typography", sel:'#typo-container'},
+	{label:"Data Visualization", sel:''},
+	{label:"-About", sel:'#about-container'}
+];
+
+function rotate() {
+	var viewport = $('meta[name="viewport"]');	
+	viewport.attr("content", `width=${screen.height},height=${screen.width}`);
+}
+
+async function lockPortrait() {
+  await document.body.requestFullscreen();
+  await screen.orientation.lock("landscape");
+  ready();
+}
+
+// https://w3c.github.io/screen-orientation/
+
 function main() {
+	
+	menu.forEach ((d,i) => {
+		if (d.label[0] == "-") {
+			$("#dropdown-standard ul").append(`<li class="divider"></li>`);
+			d.label=d.label.slice(1);
+		}
+		$("#dropdown-standard ul")
+			.append(`<li data-sel='${d.sel}' data-lab='${d.label}'><a href="#">${d.label}</a></li>`);
+			
+		$("#dropdown-standard ul li").last().on("click", e => {	
+				var val = $(e.currentTarget).data("sel");
+				console.log("clicked "+ val);	
+				$(".top-container").css("display", "none");
+				$(val).css("display", "flex");
+				$("#work-type").html("Selection: " + $(e.currentTarget).data("lab"))
+				});
+				
+		$(d.sel).css("display", "none");
+		});
+		
+	$(menu[0].sel).css("display", "flex");
 	
 	sections.forEach ((d,i) => {
 		$("#main-grid").append(`
@@ -80,6 +120,21 @@ function main() {
 		var num = $(e.target).data("num");
 		myFullpage.moveTo(parseInt(num)+2)
 		});
+		
+	$("#test").on("click", e => {	
+		console.log("clicked");
+	});
 }
 
-main();
+var myFullpage;
+$( document ).ready(function() {
+	main();
+	
+	myFullpage = new fullpage('#fullpage', {
+		controlArrows: false,
+		parallax: true,
+		slidesNavigation: true,	
+		sectionsColor: ["#fff","#222","#222","#222","#222","#222"] // ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff']
+	});
+	$('.fp-sr-only').siblings().css('background-color', '#eee')
+});

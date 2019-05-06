@@ -3,6 +3,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" />
 	<title>Monograph</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Open+Sans|Montserrat|Oswald" rel="stylesheet">
@@ -18,21 +19,32 @@
 	<div class="section active" id="section0">
 		<div>
 			<div id="content-container">
-				<div id="top-title"><img src="img/logo.png">Michael Wolf <div class="types">Data Visualization</div> <div class="types">Typography</div> </div>
-				<div id="top-container">
+				
+				<div id="top-title"><img src="img/logo.png">Michael Wolf 
+				<button id="work-type" class="bordered types" data-dropdown="#dropdown-standard">Section: Typography</button>
+				<div class="dropdown-menu dropdown-anchor-top-left dropdown-has-anchor" id="dropdown-standard" data-add-y="15">
+					<ul></ul>
+				</div>
+				
+				<div id="typo-container" class="top-container">
 <!--
+
+-->
+					<div id="main-grid"></div>
+				</div>
+				
+				<div id="about-container" class="top-container">
 					<div id="sidebar">
-						
 						<img class="connect" src="img/social/linkedin-brands.svg">
 						<img class="connect" src="img/social/twitter-square-brands.svg">
 						<img class="connect" src="img/social/instagram-brands.svg">
 						<img class="connect" src="img/social/facebook-brands.svg">
-						<img class="connect" src="img/social/envelope-square-solid.svg">
-
+						<img class="connect" src="img/social/envelope-square-solid.svg" style="padding-right: 0px;">
 					</div>
--->
-					<div id="main-grid"></div>
+					<div id="email">wolfm2@newschool.edu</div>
+					<div id="other">Other Contact Info</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -45,17 +57,12 @@
 
 
 <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="css/jquery.sweet-dropdown.min.css" />
+<script src="libs/jquery.sweet-dropdown.min.js"></script>
+
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="libs/fullpage.js"></script>
 <script type="text/javascript">
-	var myFullpage = new fullpage('#fullpage', {
-	controlArrows: false,
-	parallax: true,
-        slidesNavigation: true,	
-		
-		sectionsColor: ["#fff","#222","#222","#222","#222","#222"] // ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff']
-	});
-	$('.fp-sr-only').siblings().css('background-color', '#eee')
 </script>
 
 </body>
