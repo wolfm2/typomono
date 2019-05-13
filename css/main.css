@@ -56,6 +56,22 @@
 	}	
 }
 
+#fixedHome {
+  position: fixed;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 10px;
+    
+    z-index: 4;
+    opacity:0;
+}
+
+#fixedHome img{
+  filter: invert(.9);
+}
+
+
 #section0 {
 	text-align: left;
 }
@@ -180,8 +196,10 @@ ul li {
 }
 
 .grid-text #number {
+
+  padding-right: 2px;
   align-self: flex-end;
-	color:#f22;
+	color:#7d7d7d;
 	
 	font-family: Open Sans;
 	font-weight: 900;
@@ -193,6 +211,7 @@ ul li {
 }
 
 .grid-text #title{
+	padding-top: 10px;
   width: 122.5px;
 	color: white;
 	pposition: relative;
@@ -205,11 +224,11 @@ ul li {
 }
 
 .grid-text #title #end-block, .sect-grid  #end-block  {
-	background-color: red;
+	background-color: #e49100;
 	margin-top: 3px;
 	margin-left: -1px;
 	width: 1.5rem;
-	height: .2rem;
+	height: .3rem;
 } 
 
 .sect-grid .grid-txt-container #end-block {
